@@ -2,8 +2,11 @@ name: Fossier PR Check
 on:
   pull_request_target:
     types: [opened, synchronize]
+  issue_comment:
+    types: [created]
 
 permissions:
+  contents: write
   pull-requests: write
   issues: write
 
@@ -13,7 +16,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: PThorpe92/fossier@main
+      - uses: PThorpe92/fossier@6e7f2a6c1c727949e2a6c94d7dc6904d7bb40928
         id: fossier
         with:
           contact-url: "https://discord.gg/Fq8bJSKPHh"
